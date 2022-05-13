@@ -37,7 +37,7 @@ void print_homescreen()
     cout << "| |____| |_| | |____| \\_____| |__/ /| |__)  )"  << endl;
     cout << "|_______)___/|_______)______)_____/ |______/ "   << endl << endl;
 
-    dye(Product::name + "\tVersion: " + Product::version +
+    dye(Product::name + "\tVersion: " + Product::version + "\t" + Architecture::humanReadable +
         "\n\n" + Libraries::libcurlVersion + " RapidJSON/" + Libraries::rapidJSONVersion +
         "\n\nCompiled using " + usedCompiler::name + " Version: " + usedCompiler::version + "\n" +
         "Written by " + Developer::name + "<" + Developer::email + ">\t" + Developer::domain + "\n\n\n", dim);
