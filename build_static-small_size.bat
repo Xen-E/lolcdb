@@ -8,6 +8,13 @@
 ::--disable-gopher --disable-sspi --disable-manual --disable-zlib --without-zlib
 ::This will produce a very small static CURL library for your future projects.
 ::
-:: <3 Xen <xen-dev@pm.me> 2022
+:: <3 Xen <xen-dev@pm.me> 2022 xen-e.github.io
 ::
-g++ -s -Os -ffunction-sections -fdata-sections -Wl,--gc-sections -DNDEBUG -DCURL_STATICLIB src/*.cpp -o bin/lolcdb -Iinclude -LC:\\Libraries\\curl-7.75.0\\gcc-64-static\\lib -lcurl -lnghttp2 -lidn2 -lpsl -lssl -lcrypto -lcrypto -lgdi32 -lzstd -lbrotlidec -lws2_32
+@echo off
+ECHO Make sure to read this batch file source code!
+ECHO.
+ECHO Checking if bin folder exists or creating one...
+if not exist "bin" mkdir "bin" ::Making sure "bin" folder exists before building
+ECHO OK, building...
+g++ -s -Os -ffunction-sections -fdata-sections -Wl,--gc-sections -DNDEBUG -DCURL_STATICLIB src/*.cpp -o bin/lolcdb-small-static -Iinclude -LC:\\Libraries\\curl-7.75.0\\gcc-64-static\\lib -lcurl -lnghttp2 -lidn2 -lpsl -lssl -lcrypto -lcrypto -lgdi32 -lzstd -lbrotlidec -lws2_32
+ECHO Done.
